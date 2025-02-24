@@ -7,13 +7,13 @@ import javax.swing.*;
 public class App extends JFrame{
     private JTextField textField1;
     private JButton seven;
-    private JButton m_plus;
-    private JButton m_recall;
+    private JButton mPlus;
+    private JButton mRecall;
     private JButton eight;
-    private JButton m_clear;
+    private JButton mClear;
     private JButton nine;
     private JButton del;
-    private JButton clear_screen;
+    private JButton clearScreen;
     private JButton four;
     private JButton one;
     private JButton zero;
@@ -35,8 +35,8 @@ public class App extends JFrame{
     private JButton multiplie;
     private JPanel panel;
     private double memory = 0;
-    private double number_1;
-    private double number_2;
+    private double number1;
+    private double number2;
     private double answer;
     private String action;
 
@@ -144,7 +144,7 @@ public class App extends JFrame{
                 }
             }
         });
-        m_plus.addActionListener(new ActionListener() {
+        mPlus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 memory += Double.parseDouble(textField1.getText());
@@ -154,24 +154,24 @@ public class App extends JFrame{
         plus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                number_1 = Double.parseDouble(textField1.getText());
+                number1 = Double.parseDouble(textField1.getText());
                 textField1.setText("");
                 action = "+";
             }
         });
-        m_recall.addActionListener(new ActionListener() {
+        mRecall.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textField1.setText(Double.toString(memory));
             }
         });
-        m_clear.addActionListener(new ActionListener() {
+        mClear.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 memory = 0;
             }
         });
-        clear_screen.addActionListener(new ActionListener() {
+        clearScreen.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 textField1.setText("");
@@ -180,7 +180,7 @@ public class App extends JFrame{
         minus.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                number_1 = Double.parseDouble(textField1.getText());
+                number1 = Double.parseDouble(textField1.getText());
                 textField1.setText("");
                 action = "-";
             }
@@ -188,7 +188,7 @@ public class App extends JFrame{
         multiplie.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                number_1 = Double.parseDouble(textField1.getText());
+                number1 = Double.parseDouble(textField1.getText());
                 textField1.setText("");
                 action = "*";
             }
@@ -196,7 +196,7 @@ public class App extends JFrame{
         divide.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                number_1 = Double.parseDouble(textField1.getText());
+                number1 = Double.parseDouble(textField1.getText());
                 textField1.setText("");
                 action = "/";
             }
@@ -204,43 +204,43 @@ public class App extends JFrame{
         square.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                number_1 = Double.parseDouble(textField1.getText());
-                answer = Math.pow(number_1, 2);
+                number1 = Double.parseDouble(textField1.getText());
+                answer = Math.pow(number1, 2);
                 textField1.setText(Double.toString(answer));
             }
         });
         cube.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                number_1 = Double.parseDouble(textField1.getText());
-                answer = Math.pow(number_1, 3);
+                number1 = Double.parseDouble(textField1.getText());
+                answer = Math.pow(number1, 3);
                 textField1.setText(Double.toString(answer));
             }
         });
         power.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                number_1 = Double.parseDouble(textField1.getText());
+                number1 = Double.parseDouble(textField1.getText());
                 textField1.setText("");
-                number_2 = Double.parseDouble(textField1.getText());
-                answer = Math.pow(number_1, number_2);
+                number2 = Double.parseDouble(textField1.getText());
+                answer = Math.pow(number1, number2);
                 textField1.setText(Double.toString(answer));
             }
         });
         root.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                number_1 = Double.parseDouble(textField1.getText());
-                answer = Math.sqrt(number_1);
+                number1 = Double.parseDouble(textField1.getText());
+                answer = Math.sqrt(number1);
                 textField1.setText(Double.toString(answer));
             }
         });
         factorial.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                number_1 = Double.parseDouble(textField1.getText());
+                number1 = Double.parseDouble(textField1.getText());
                 answer = 1;
-                for (int i = 1; i <= number_1; i++) {
+                for (int i = 1; i <= number1; i++) {
                     answer *= i;
                 }
                 textField1.setText(Double.toString(answer));
@@ -251,8 +251,8 @@ public class App extends JFrame{
         logariphm.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                number_1 = Double.parseDouble(textField1.getText());
-                answer = Math.log(number_1);
+                number1 = Double.parseDouble(textField1.getText());
+                answer = Math.log(number1);
                 textField1.setText(Double.toString(answer));
             }
         });
@@ -262,28 +262,28 @@ public class App extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (Objects.equals(textField1.getText(), "")) {
-                    number_2 = 0;
+                    number2 = 0;
                 } else {
-                    number_2 = Double.parseDouble(textField1.getText());
+                    number2 = Double.parseDouble(textField1.getText());
                 }
                 switch (action) {
                     case "+" -> {
-                        answer = number_1 + number_2;
+                        answer = number1 + number2;
                         textField1.setText(Double.toString(answer));
                     }
                     case "-" -> {
-                        answer = number_1 - number_2;
+                        answer = number1 - number2;
                         textField1.setText(Double.toString(answer));
                     }
                     case "*" -> {
-                        answer = number_1 * number_2;
+                        answer = number1 * number2;
                         textField1.setText(Double.toString(answer));
                     }
                     case "/" -> {
-                        if (number_2 == 0) {
+                        if (number2 == 0) {
                             textField1.setText("Can not divide by 0");
                         } else {
-                            answer = number_1 / number_2;
+                            answer = number1 / number2;
                             textField1.setText(Double.toString(answer));
                         }
                     }
